@@ -1,8 +1,11 @@
-
-<div class="skills-container">
+<div class="skills-section">
+  <h2 class="skills-heading">Technical Skills </h2>
+  <div class="skills-container">
     <div class="skill-card" *ngFor="let skill of skills">
-      <img [src]="skill.img" [alt]="skill.name">
+      <div class="skill-image">
+        <img [src]="skill.img" [alt]="skill.name">
+      </div>
       <p>{{ skill.name }}</p>
     </div>
   </div>
-  
+</div>

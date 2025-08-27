@@ -1,60 +1,77 @@
-/* Container for all skills */
+/* Parent container for the entire section */
+.skills-section {
+  background: #000;
+  min-height: 100vh;
+  padding: 20px;
+  box-sizing: border-box;
+}
+
+/* Heading styling */
+.skills-heading {
+  text-align: center;
+  font-size: 2rem;
+  font-weight: bold;
+  color:aqua;
+  margin-bottom: 30px;
+  font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}
+
+/* Container for all skills in a 4-column grid */
 .skills-container {
-    display: grid;
-    grid-template-columns: repeat(4, 1fr); /* 4 columns */
-    gap: 30px; /* Space between cards */
-    padding: 20px;
-    background: #000; /* Black background */
-    height: 100vh; /* Full viewport height */
-    box-sizing: border-box; /* Include padding in the total width and height */
-    align-content: center; /* Center content vertically */
-  }
-  
-  /* Each skill card */
-  .skill-card {
-    background: rgba(255, 255, 255, 0.1); /* Semi-transparent light background */
-    width: 100px; /* Fixed width for circular cards */
-    height: 100px; /* Fixed height for circular cards */
-    margin-left: 80px;
-    margin-top: 20px;
-    margin-bottom: 10px;
-    margin-right: 30px;
-    padding: 10px;
-    border-radius: 50%; /* Circular shape */
-    text-align: center;
-    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.5);
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
-    color: #fff; /* White text color */
-    border: 2px solid transparent;
-    border-image: linear-gradient(45deg, #ff007f, #00d4ff);
-    border-image-slice: 1;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-  }
-  
-  .skill-card:hover {
-    transform: translateY(-10px);
-    box-shadow: 0 16px 32px rgba(255, 165, 0, 0.8); /* Orange box-shadow on hover */
-  }
-  
-  /* Image container with fixed dimensions */
-  .skill-card img {
-    width: 50px;   /* Adjusted width */
-    height: 50px;  /* Adjusted height */
-    border-radius: 50%; /* Ensures the image is round */
-    border: 2px solid #fff;
-    object-fit: cover;  /* Ensures the image covers the container without stretching */
-  }
-  
-  /* Skill name styling */
-  .skill-card p {
-    margin-top: 5px;
-    color: #fff;
-    font-size: 10px; /* Adjusted font size */
-    font-weight: bold;
-    text-transform: uppercase;
-    letter-spacing: 1px;
-  }
-  
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 20px;
+  /* Remove background and min-height here to let the parent handle it */
+}
+
+
+
+/* Image container with fixed dimensions */
+.skill-image {
+  width: 100px;
+  height: 100px;
+  overflow: hidden;
+  margin-bottom: 10px;
+}
+
+/* Ensure all images fill the container uniformly */
+.skill-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* Skill name styling */
+.skill-card p {
+  margin: 0;
+  font-size: 0.9rem;
+  color: #fff;
+  font-weight: bold;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+/* Existing skill card styling */
+.skill-card {
+  background: rgba(255, 255, 255, 0.05);
+  border-radius: 50%;
+  text-align: center;
+  padding: 15px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.4);
+  transition: background 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+/* Hover effect: change background color, add a slight lift */
+.skill-card:hover {
+  background: rgba(255, 255, 255, 0.1);  /* Lighter background on hover */
+  transform: translateY(-5px);
+  box-shadow: 0 8px 16px rgba(255, 165, 0, 0.8); /* Orange glow */
+}
+
+/* Optionally, change the text color on hover */
+.skill-card:hover p {
+  color: #ffcc00;  /* For example, a yellow accent */
+}
